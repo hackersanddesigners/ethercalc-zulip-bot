@@ -1,0 +1,4 @@
+[api]
+site=https://zulip.somewhere.eu # ypur zulip host
+email=ethercalc-bot@zulip.somewhere.eu # email address of your bot
+key=your-bots-api-key # your bot's api key
