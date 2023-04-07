@@ -32,7 +32,8 @@ export default {
 
   is_valid_sheet ( sheet ) {
     // if ( /^[a-z0-9]+(?:-[a-z0-9]+)*$/g.test( sheet ) ) {
-    return ( /\W|_|:|-|%/g.test( sheet ) )
+    // return ( /\W|_|:|-|%/g.test( sheet ) )
+    return ( /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/g.test( sheet ) )
   },
 
 
