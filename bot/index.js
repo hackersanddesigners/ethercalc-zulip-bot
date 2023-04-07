@@ -450,7 +450,9 @@ export default class Bot {
         if ( !result ) {
           return await this._send( locale.bot.commands.exists.no( sheet ) )
         }
+        await this._send( `Found sheet ${ sheet } at domain ${ domain }.` )
         const data = await ethercalc.ext_get( domain, sheet )
+        await this._send( `Got sheet ${ sheet } data.` )
         await ethercalc.post( sheet, data )
         return await this._send( locale.bot.commands.import.success({ sheet, domain }) )
       } catch ( error ) {
