@@ -446,7 +446,7 @@ export default class Bot {
       await wait( 1000 )
       const domain = this.import_src
       try  {
-        const result = await ethercalc.ext_exists( sheet )
+        const result = await ethercalc.ext_exists( domain, sheet )
         if ( !result ) {
           return await this._send( locale.bot.commands.exists.no( sheet ) )
         }
