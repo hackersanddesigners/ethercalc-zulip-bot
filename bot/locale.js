@@ -167,7 +167,7 @@ export default {
         ],
         no_src:
         `Please provide a source URL to import from. For example:`
-        + `\n\`/import_set_src https://ethercalc.somewhere.eu/`,
+        + `\n\`/import_set_src https://ethercalc.somewhere.eu/\``,
         success: src => `Set import source URL to ** ${ src } **.`
       },
 
@@ -185,6 +185,9 @@ export default {
         no_source:
           `Please provide at least one sheet to import. For example:`
             + `\n\`/import my-sheet-1 my-sheet-2 octopus-sheet\``,
+        success: ({ sheet, domain }) => (
+          `Imported sheet **${ to_url(sheet) }** from ** ${ domain }${ sheet } **.`
+        )
       },
 
       export_set_dest: {

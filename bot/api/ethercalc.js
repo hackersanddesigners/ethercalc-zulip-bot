@@ -98,6 +98,16 @@ export default {
   },
 
 
+
+  // check if sheet exists on external server
+
+  ext_exists : sheet => new Promise( ( resolve, reject ) => {
+    second_axios
+    .get( `_exists/${ sheet }`)
+    .then( result => resolve( result.data ) )
+    .catch( error => reject( error ) )
+  }),
+
   // get sheet from another server
 
   ext_get : ( domain, sheet ) => new Promise( ( resolve, reject ) => {

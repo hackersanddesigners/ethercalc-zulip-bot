@@ -443,7 +443,19 @@ export default class Bot {
     // WARNING MESSY SPACE RAN OUT OF TIME
 
     import : async sheet => {
-      // TODO
+      await wait( 1000 )
+      const domain = this.import_src
+      try  {
+        const result = await ethercalc.ext_exists( sheet )
+        if ( !result ) {
+          return await this._send( locale.bot.commands.exists.no( sheet ) )
+        }
+        const data = await ethercalc.ext_get( doamin, sheet )
+        await ethercalc.post( sheet, data )
+        return await this._send( locale.bot.commands.import.success({ sheet, domain }) )
+      } catch ( error ) {
+        return await this._throw( error )
+      }
     },
 
     export : async sheet => {
